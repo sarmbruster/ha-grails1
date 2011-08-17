@@ -1,8 +1,9 @@
 grails {
     neo4j {
-        type = "embedded"
-        location = "data/neo4j"
-        params = [:]
+
+//        type = "embedded"
+//        location = "data/neo4j"
+//        params = [:]
 
         type = "ha"
         location = "data/neo4j_" + System.properties['ha.machine_id']
