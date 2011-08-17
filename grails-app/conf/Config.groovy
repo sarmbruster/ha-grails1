@@ -2,7 +2,7 @@
 // config files can either be Java properties files or ConfigSlurper scripts
 
 grails.config.locations = [ "file:${userHome}/.grails/${appName}-config.groovy",
-        "/opt/app/fanorakel/etc/${appName}-config.groovy"]
+        "file:/opt/app/fanorakel/etc/${appName}-config.groovy"]
 
 // grails.config.locations = [ "classpath:${appName}-config.properties",
 //                             "classpath:${appName}-config.groovy",
