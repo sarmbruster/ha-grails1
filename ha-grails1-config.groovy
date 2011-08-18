@@ -2,9 +2,9 @@
 grails {
     neo4j {
 
-        type = "embedded"
-        location = "data/neo4j"
-        params = [:]
+//        type = "embedded"
+//        location = "data/neo4j"
+//        params = [:]
 
 //        type = "ha"
 //        location = "data/neo4j_" + System.properties['ha.machine_id']
@@ -13,10 +13,6 @@ grails {
 //                'ha.zoo_keeper_servers': 'localhost:2181,localhost:2182,localhost:2183'
 //        ]
 
-    }
-}
-/*grails {
-    neo4j {
         type = 'org.neo4j.wrap.workaround.HABugWorkaroundGraphDatabaseWrapper'
         location = "/home/stefan/Programming/mindblast/neoha/ha-grails1/data/neo4j"
         params = [
@@ -24,4 +20,4 @@ grails {
                 'ha.zoo_keeper_servers': 'localhost:2181,localhost:2182,localhost:2183'
         ]
     }
-}*/
+}
