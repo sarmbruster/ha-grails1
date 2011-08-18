@@ -70,6 +70,9 @@ environments {
 
 }
 
+def catalinaBase = System.properties.getProperty('catalina.base') ?: '.'
+def logDirectory = "${catalinaBase}/logs"
+
 // log4j configuration
 log4j = {
     // Example of changing the log pattern for the default console
@@ -92,4 +95,15 @@ log4j = {
            'net.sf.ehcache.hibernate'
 
     warn   'org.mortbay.log'
+}
+
+environments {
+    production {
+        log4j = {root ->
+            appenders {
+                rollingFile name: 'stdout', file: "${logDirectory}/${appName}.log".toString(), maxFileSize: '10MB', maxBackupIndex: 5
+                rollingFile name: 'stacktrace', file: "${logDirectory}/${appName}_stack.log".toString(), maxFileSize: '10MB', maxBackupIndex: 5
+            }
+        }
+    }
 }
